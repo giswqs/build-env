@@ -9,9 +9,7 @@ on:
 name: macOS build
 jobs:
   test-macOS:
-
     runs-on: macos-latest
-
     steps:   
         - uses: actions/checkout@v2
           with:
@@ -20,18 +18,6 @@ jobs:
           uses: actions/setup-python@v2
           with:
             python-version: 3.9
-        # # Handle GDAL
-        # - name: Install GDAL
-        #   run: conda install -c conda-forge gdal=3.4.0 --yes
-        # - name: Test GDAL installation
-        #   run: |
-        #     conda activate
-        #     gdalinfo --version
-        #     python -c "from osgeo import gdal"
-        # # Install everything else
-        # - name: Install other dependencies
-        #   run: |
-        #     pip install -r requirements.txt  -r requirements_dev.txt
         - name: install dependencies
           run: brew install gdal
         - name: set up gdal
@@ -43,7 +29,8 @@ jobs:
         - name: Test GDAL installation
           run: |
             gdalinfo --version
-        # Install everything else
         - name: Install other dependencies
           run: |
+            python -m pip install --upgrade pip
+            pip install --no-cache-dir Cython
             pip install -r requirements.txt -r requirements_dev.txt

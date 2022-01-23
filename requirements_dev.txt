@@ -1,1 +1,12 @@
+black
+codespell
+datapane
+geopandas
+keplergl
 localtileserver
+osmnx
+psycopg2
+pydeck
+rio-cogeo
+sqlalchemy
+xarray_leaflet         
