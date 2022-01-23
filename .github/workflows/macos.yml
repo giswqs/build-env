@@ -18,9 +18,9 @@ jobs:
           uses: actions/setup-python@v2
           with:
             python-version: 3.9
-        - name: install dependencies
+        - name: Install GDAL
           run: brew install gdal
-        - name: set up gdal
+        - name: Set up GDAL
           run: |
             GDAL_VER=$(find /usr/local/Cellar/gdal/  -name "lib" | awk -F"/" '{print $7}')
             GDAL_LDPATH=/usr/local/Cellar/gdal/$GDAL_VER/lib/
@@ -29,7 +29,7 @@ jobs:
         - name: Test GDAL installation
           run: |
             gdalinfo --version
-        - name: Install other dependencies
+        - name: Install dependencies
           run: |
             python -m pip install --upgrade pip
             pip install --no-cache-dir Cython

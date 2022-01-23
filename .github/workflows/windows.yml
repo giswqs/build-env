@@ -23,7 +23,7 @@ jobs:
         run: |
           python -c "from osgeo import gdal"
           gdalinfo --version
-      - name: Install other dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install --no-cache-dir Cython
