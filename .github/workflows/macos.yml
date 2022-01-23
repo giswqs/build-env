@@ -26,8 +26,9 @@ jobs:
           run: conda install -c conda-forge gdal=3.4.0 --yes
         - name: Test GDAL installation
           run: |
-            python -c "import gdal"
+            conda activate
             gdalinfo --version
+            python -c "import gdal"
         # Install everything else
         - name: Install other dependencies
           run: |
