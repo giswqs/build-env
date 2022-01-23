@@ -1,0 +1,36 @@
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+
+name: Linux build
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.7, 3.8, 3.9, "3.10"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      # Handle GDAL
+      - name: Install GDAL
+        run: |
+          python -m pip install --upgrade pip
+          pip install --find-links=https://girder.github.io/large_image_wheels --no-cache GDAL
+      - name: Test GDAL installation
+        run: |
+          python -c "from osgeo import gdal"
+          gdalinfo --version
+      # Install everything else
+      - name: Install other dependencies
+        run: |
+          pip install -r requirements.txt requirements_dev.txt
+
