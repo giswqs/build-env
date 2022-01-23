@@ -24,7 +24,6 @@ jobs:
             GDAL_LDPATH=/usr/local/Cellar/gdal/$GDAL_VER/lib/
             export LIBRARY_PATH=$GDAL_LDPATH
             echo $LIBRARY_PATH
-            ./ci.sh
         - name: Test GDAL installation
           run: |
             python -c "from osgeo import gdal"
