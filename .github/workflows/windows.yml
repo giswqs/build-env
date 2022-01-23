@@ -27,4 +27,4 @@ jobs:
       # Install everything else
       - name: Install other dependencies
         run: |
-          pip install -r requirements_win.txt  -r requirements_dev.txt
+          pip install -r requirements.txt  -r requirements_dev.txt
