@@ -8,7 +8,7 @@ on:
 
 name: Linux build
 jobs:
-  test:
+  test-ubuntu:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
