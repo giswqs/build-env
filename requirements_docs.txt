@@ -1,0 +1,16 @@
+black
+pip
+bump2version
+wheel
+watchdog
+flake8
+tox
+coverage
+Sphinx
+twine
+grip
+mkdocs-material 
+mkdocstrings 
+mkdocs-git-revision-date-plugin 
+mkdocs-jupyter 
+mkdocs-pdf-export-plugin
