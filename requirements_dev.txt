@@ -7,5 +7,6 @@ localtileserver
 osmnx
 psycopg2
 pydeck
+rio-cogeo
 sqlalchemy
 xarray_leaflet         
