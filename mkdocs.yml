@@ -1,0 +1,54 @@
+site_name: example
+
+site_url: https://giswqs.github.io/build-env
+
+repo_url: https://github.com/giswqs/build-env
+
+theme:
+    palette:
+        scheme: preference
+    name: material
+    icon:
+        repo: fontawesome/brands/github
+    features:
+        - navigation.instant
+        - search.highlight
+        # - navigation.expand
+        # - navigation.tabs
+    custom_dir: "docs/overrides"
+
+# extra_javascript:
+#     - javascripts/embed-amd.js
+#     - javascripts/require.min.js
+
+plugins:
+    - search
+    - mkdocstrings
+    - git-revision-date
+    - mkdocs-jupyter:
+          include_source: True
+          ignore_h1_titles: True
+          execute: True
+          execute_ignore: "workshops/*.ipynb"
+
+markdown_extensions:
+    - attr_list
+    - pymdownx.superfences
+    - pymdownx.highlight:
+          linenums: true
+    - toc:
+          permalink: true
+
+# google_analytics:
+#     - UA-198454981-1
+#     - auto
+
+extra:
+    analytics:
+        provider: google
+        property: UA-198454981-1
+
+nav:
+    - Home: index.md
+
+
