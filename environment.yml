@@ -13,7 +13,7 @@ dependencies:
   - jupyter-server-proxy
   - keplergl
   - leafmap>=0.7.6
-  # - localtileserver>=0.4.0
+  - localtileserver>=0.4.2
   - osmnx
   - pip
   - pydeck
@@ -24,6 +24,6 @@ dependencies:
   - tifffile
   - xarray_leaflet
   - pip:
-      - git+https://github.com/banesullivan/localtileserver
+      # - git+https://github.com/banesullivan/localtileserver
       # - git+https://github.com/giswqs/leafmap
       # - git+https://github.com/giswqs/geemap 
