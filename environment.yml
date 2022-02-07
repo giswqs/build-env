@@ -11,7 +11,7 @@ dependencies:
   - jupyter-server-proxy
   # - keplergl
   - leafmap>=0.7.6
-  - localtileserver>=0.4.2
+  - localtileserver>=0.4.3
   # - osmnx
   - pip
   # - pydeck
